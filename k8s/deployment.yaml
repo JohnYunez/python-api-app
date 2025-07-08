@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-dpl
+  labels:
+    app: python-app-dpl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - image: johnyunez/python-api-app:v1.2
+        name: python-app
+        ports:
+        - containerPort: 5000
