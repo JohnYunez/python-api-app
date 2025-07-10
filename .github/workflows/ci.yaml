@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     paths:
-      - src/*
+      - src/**
     branches:
       - master
 
@@ -22,4 +22,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: johnyunez/python-api-app:${GITHUB_SHA::6}
+          tags: johnyunez/python-api-app:${{ github.sha }}
