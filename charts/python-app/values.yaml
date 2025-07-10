@@ -1,8 +1,8 @@
-replicaCount: 1
+replicaCount: 2
 image:
   repository: johnyunez/python-api-app
-#  pullPolicy: IfNotPresent
-  pullPolicy: Never
+  pullPolicy: IfNotPresent
+#  pullPolicy: Never
   tag: "v1.2"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -91,7 +91,7 @@ readinessProbe:
 autoscaling:
   enabled: false
   minReplicas: 1
-  maxReplicas: 100
+  maxReplicas: 5
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
