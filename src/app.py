@@ -10,7 +10,7 @@ def details():
         'message': 'Hello World',
         'time': datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'server': socket.gethostname(),
-        'message2' : 'bye bye'
+#        'message2' : 'bye bye'
     })
 
 @app.route('/api/v1/healthz')

@@ -6,6 +6,8 @@ controller:
 
 server:
   replicas: 1
+  service:
+    type: LoadBalancer
 
 repoServer:
   replicas: 1
@@ -13,14 +15,15 @@ repoServer:
 applicationSet:
   replicas: 1
 
-global:
-  domain: localhost
+#global:
+#  domain: localhost
 
 certificate:
   enabled: true
 
-server:
-  ingress:
-    enabled: true
-    ingressClassName: "traefik"
-    tls: true
+#server:
+#  ingress:
+#    enabled: true
+#    ingressClassName: "alb"
+##    ingressClassName: "traefik"
+#    tls: true
