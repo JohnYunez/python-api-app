@@ -44,23 +44,23 @@ securityContext: {}
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-  type: ClusterIP
+  type: LoadBalancer
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
   port: 5000
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
-  enabled: true
-  className: "traefik"
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: localhost
-      paths:
-        - path: /api
-          pathType: Prefix
-  tls: []
+  enabled: false
+##  className: "traefik"
+##  annotations: {}
+##    # kubernetes.io/ingress.class: nginx
+##    # kubernetes.io/tls-acme: "true"
+##  hosts:
+##    - host: localhost
+##      paths:
+##        - path: /api
+##          pathType: Prefix
+##  tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
