@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "python-app.fullname" . }}
   annotations:
-    service.beta.kubernetes.io/aws-load-balancer-scheme: {{ .Values.service.annotations.aws-load-balancer-scheme }}
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
   labels:
     {{- include "python-app.labels" . | nindent 4 }}
 spec:
