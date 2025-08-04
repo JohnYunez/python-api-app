@@ -3,7 +3,7 @@ image:
   repository: johnyunez/python-api-app
   pullPolicy: IfNotPresent
 #  pullPolicy: Never
-  tag: "v1.2"
+  tag: v1.2
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -45,22 +45,25 @@ securityContext: {}
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: LoadBalancer
+#  type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 5000
+  port: 8080
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
   enabled: false
-##  className: "traefik"
-##  annotations: {}
-##    # kubernetes.io/ingress.class: nginx
-##    # kubernetes.io/tls-acme: "true"
-##  hosts:
-##    - host: localhost
-##      paths:
-##        - path: /api
-##          pathType: Prefix
-##  tls: []
+#  enabled: true
+#  className: "traefik"
+  ClassName: "alb"
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: localhost
+      paths:
+        - path: /api
+          pathType: Prefix
+  tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
