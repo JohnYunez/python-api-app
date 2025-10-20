@@ -11,7 +11,7 @@ def details():
         'message': 'Hello World',
         'time': datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'server': socket.gethostname(),
-        'env_user': os.getenv('USER', 'Not Set')
+        'env-var_user': os.getenv('USER', 'Not Set')
 #        'message2' : 'bye bye'
     })
 
