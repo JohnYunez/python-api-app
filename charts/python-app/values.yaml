@@ -1,7 +1,7 @@
 image:
   repository: johnyunez/python-api-app
   pullPolicy: IfNotPresent
-  tag: v1.2
+  tag: 252020-0203
 
 replicaCount: 1
 
