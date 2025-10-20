@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 import datetime
 import socket
+import os
 
 app = Flask(__name__)
 
@@ -10,6 +11,7 @@ def details():
         'message': 'Hello World',
         'time': datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'server': socket.gethostname(),
+        'env_user': os.getenv('USER', 'Not Set')
 #        'message2' : 'bye bye'
     })
 
