@@ -9,6 +9,7 @@ on:
 
 jobs:
   ci:
+    needs: cd
     runs-on: ubuntu-latest
     steps:
       -
@@ -29,16 +30,14 @@ jobs:
           push: true
           tags: johnyunez/python-api-app:${{ env.IMAGE_VERSION }}
   cd:
-    needs: ci
     runs-on: self-hosted
     steps:
       -
         name: Install Argocd
         shell: bash
         run: |
-          curl -sSL -o argocd https://argocd-server.argocd/download/argocd-linux-amd64
-          chmod +x argocd 
-          sudo mv argocd /usr/local/bin/
+          sudo curl -sSLk -o /usr/local/bin/argocd https://argocd-server.argocd/download/argocd-linux-amd64
+          sudo chmod +x /usr/local/bin/argocd 
       -
         name: Argocd app sync
         shell: bash
@@ -47,4 +46,4 @@ jobs:
             --insecure \
             --username ${{ vars.ARGOCD_USERNAME }} \
             --password ${{ secrets.ARGOCD_PASSWORD }}
-          argocd app sync python-app
+          argocd app sync python-api-app
