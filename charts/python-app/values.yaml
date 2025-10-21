@@ -1,7 +1,7 @@
 image:
   repository: johnyunez/python-api-app
   pullPolicy: IfNotPresent
-  tag: '{{ needs.ci.outputs.image_version }}'
+  tag: '251021-1648'
 replicaCount: 1
 livenessProbe:
   httpGet:
