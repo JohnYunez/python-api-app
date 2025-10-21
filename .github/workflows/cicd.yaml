@@ -41,7 +41,7 @@ jobs:
         shell: bash
         run: |
           pip install yq
-          yq -Yi '.image.tag = "{{ needs.ci.outputs.image_version }}"' ./charts/python-app/values.yaml
+          yq -Yi '.image.tag = "${{ needs.ci.outputs.image_version }}"' ./charts/python-app/values.yaml
       -
         name: Commit changes to charts/values/image.tag
         uses: stefanzweifel/git-auto-commit-action@v4

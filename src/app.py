@@ -11,7 +11,7 @@ def details():
         'message': 'Hello World',
         'time': datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'server': socket.gethostname(),
-        'env(INFRA_DATA)': os.getenv('INFRA_DATA', 'Not Set')
+        'env(INFRA_DATA)': os.getenv('INFRA_DATA', 'Not Set Yet')
     })
 
 @app.route('/api/v1/healthz')
