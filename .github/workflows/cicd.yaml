@@ -33,13 +33,6 @@ jobs:
     runs-on: self-hosted
     steps:
       -
-        name: Argocd login
-        uses: imranismail/setup-argocd@v2
-        with:
-          argocd_server: argocd-server.argocd
-          argocd_username: ${{ vars.ARGOCD_USERNAME }}
-          argocd_password: ${{ secrets.ARGOCD_PASSWORD }}
-      -
         name: Argocd app sync
         shell: bash
         run: |
@@ -47,4 +40,4 @@ jobs:
             --insecure \
             --username ${{ vars.ARGOCD_USERNAME }} \
             --password ${{ secrets.ARGOCD_PASSWORD }}
-          argocd app sync python-app --hard-refresh
+          argocd app sync python-app
