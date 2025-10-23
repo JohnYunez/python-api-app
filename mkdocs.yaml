@@ -1,0 +1,15 @@
+site_name: Python API Application
+site_description: Documentation for the Python API Application
+site_author: John Yunez
+repo_url: https://github.com/JohnYunez/python-api-app
+edit_uri: edit/master/docs/
+docs_dir: docs
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Usage: usage.md
+  - Development: development.md
