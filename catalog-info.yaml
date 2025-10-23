@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-api-app
+  description: Python API application component
+  tags:
+    - python
+    - api
+  annotations:
+    github.com/project-slug: JohnYunez/python-api-app
+spec:
+  type: service
+  lifecycle: experimental
+  owner: IDP
