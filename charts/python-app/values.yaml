@@ -2,7 +2,7 @@ image:
   repository: johnyunez/python-api-app
   pullPolicy: IfNotPresent
   tag: '251021-1648'
-replicaCount: 1
+replicaCount: 2
 livenessProbe:
   httpGet:
     path: /api/v1/healthz
