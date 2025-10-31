@@ -1,7 +1,7 @@
 image:
   repository: johnyunez/python-api-app
   pullPolicy: IfNotPresent
-  tag: '251021-1648'
+  tag: '251031-1646'
 replicaCount: 2
 livenessProbe:
   httpGet:
