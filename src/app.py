@@ -11,6 +11,7 @@ def details():
         'message': 'Hello World',
         'time': datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'server': socket.gethostname(),
+        'greeting': 'argo y github rules!!!',
         'env(INFRA_DATA)': os.getenv('INFRA_DATA', 'Not Set Yet')
     })
 
